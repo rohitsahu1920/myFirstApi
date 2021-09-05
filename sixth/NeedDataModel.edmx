@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="needDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="need_login_table">
+          <Key>
+            <PropertyRef Name="mobile_number" />
+          </Key>
+          <Property Name="mobile_number" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="first_name" Type="varchar(max)" />
+          <Property Name="last_name" Type="varchar(max)" />
+          <Property Name="email" Type="varchar(max)" />
+          <Property Name="password" Type="varchar(max)" />
+          <Property Name="gender" Type="varchar(max)" />
+          <Property Name="first_login" Type="varchar(max)" />
+          <Property Name="last_login" Type="varchar(max)" />
+          <Property Name="profile_image" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="need_product_details">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="time_stamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="photo_one" Type="image" />
+          <Property Name="photo_two" Type="image" />
+          <Property Name="photo_three" Type="image" />
+          <Property Name="lat" Type="nvarchar(max)" />
+          <Property Name="long" Type="nvarchar(max)" />
+          <Property Name="title" Type="nvarchar(max)" />
+          <Property Name="decription" Type="nvarchar(max)" />
+          <Property Name="category" Type="nvarchar(max)" />
+          <Property Name="sub_category" Type="nvarchar(max)" />
+          <Property Name="super_sub_catrgory" Type="nvarchar(max)" />
+          <Property Name="mobile_number" Type="nvarchar(max)" />
+          <Property Name="isactive" Type="varchar(max)" />
+          <Property Name="report_count" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="needDbModelStoreContainer">
+          <EntitySet Name="need_login_table" EntityType="Self.need_login_table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="need_product_details" EntityType="Self.need_product_details" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="needDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="need_login_table">
+          <Key>
+            <PropertyRef Name="mobile_number" />
+          </Key>
+          <Property Name="mobile_number" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="first_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="last_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="profile_image" Type="String" Nullable="true" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="first_login" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="last_login" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="need_product_details">
+          <Key>
+            <PropertyRef Name="product_id" />
+          </Key>
+          <Property Name="product_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="time_stamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="photo_one" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="photo_two" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="photo_three" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="lat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="long" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="decription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sub_category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="super_sub_catrgory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mobile_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isactive" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="report_count" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="needDbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="need_login_table" EntityType="Self.need_login_table" />
+          <EntitySet Name="need_product_details" EntityType="Self.need_product_details" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="needDbModelStoreContainer" CdmEntityContainer="needDbEntities">
+    <EntitySetMapping Name="need_login_table">
+      <EntityTypeMapping TypeName="IsTypeOf(needDbModel.need_login_table)">
+        <MappingFragment StoreEntitySet="need_login_table">
+          <ScalarProperty Name="mobile_number" ColumnName="mobile_number" />
+          <ScalarProperty Name="first_name" ColumnName="first_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="profile_image" ColumnName="profile_image" />
+          <ScalarProperty Name="first_login" ColumnName="first_login" />
+          <ScalarProperty Name="last_login" ColumnName="last_login" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="need_product_details">
+      <EntityTypeMapping TypeName="IsTypeOf(needDbModel.need_product_details)">
+        <MappingFragment StoreEntitySet="need_product_details">
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="time_stamp" ColumnName="time_stamp" />
+          <ScalarProperty Name="photo_one" ColumnName="photo_one" />
+          <ScalarProperty Name="photo_two" ColumnName="photo_two" />
+          <ScalarProperty Name="photo_three" ColumnName="photo_three" />
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="long" ColumnName="long" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="decription" ColumnName="decription" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="sub_category" ColumnName="sub_category" />
+          <ScalarProperty Name="super_sub_catrgory" ColumnName="super_sub_catrgory" />
+          <ScalarProperty Name="mobile_number" ColumnName="mobile_number" />
+          <ScalarProperty Name="isactive" ColumnName="isactive" />
+          <ScalarProperty Name="report_count" ColumnName="report_count" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
