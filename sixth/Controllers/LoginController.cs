@@ -12,8 +12,6 @@ namespace sixth.Controllers
 {
     public class LoginController : ApiController
     {
-        public object UrlUtil { get; private set; }
-
         public IHttpActionResult Post([FromBody] login_model login_Model)
         {
             using (needDbEntities needDbEntities = new needDbEntities())
@@ -52,9 +50,6 @@ namespace sixth.Controllers
                     //return Request.CreateErrorResponse(HttpStatusCode.BadRequest, e);
                     return BadRequest(e.ToString());
                 }
-                
-
-                
             }
         }
     }

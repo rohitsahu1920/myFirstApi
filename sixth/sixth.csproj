@@ -165,11 +165,15 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Controllers\UpdateEmailController.cs" />
+    <Compile Include="Controllers\UpdatePhoneController.cs" />
+    <Compile Include="Controllers\UpdateProfileController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\login_model.cs" />
+    <Compile Include="Models\update_phone_email.cs" />
     <Compile Include="NeedDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
