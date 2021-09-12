@@ -42,7 +42,7 @@ namespace sixth.Controllers
                     else
                     {
                         //return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Username or Password is wrong.");
-                        return BadRequest("Username or Password is wrong.");
+                        return NotFound();
                     }
                 }
                 catch (Exception e)

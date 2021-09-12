@@ -15,10 +15,10 @@ namespace sixth
     public partial class need_product_details
     {
         public string product_id { get; set; }
-        public byte[] time_stamp { get; set; }
-        public byte[] photo_one { get; set; }
-        public byte[] photo_two { get; set; }
-        public byte[] photo_three { get; set; }
+        public string time_stamp { get; set; }
+        public string photo_one { get; set; }
+        public string photo_two { get; set; }
+        public string photo_three { get; set; }
         public string lat { get; set; }
         public string @long { get; set; }
         public string title { get; set; }
@@ -29,5 +29,6 @@ namespace sixth
         public string mobile_number { get; set; }
         public string isactive { get; set; }
         public string report_count { get; set; }
+        public string emailId { get; set; }
     }
 }

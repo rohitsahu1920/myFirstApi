@@ -4,46 +4,47 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="needDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="need_login_table">
-          <Key>
-            <PropertyRef Name="mobile_number" />
-          </Key>
-          <Property Name="mobile_number" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="first_name" Type="varchar(max)" />
-          <Property Name="last_name" Type="varchar(max)" />
-          <Property Name="email" Type="varchar(max)" />
-          <Property Name="password" Type="varchar(max)" />
-          <Property Name="gender" Type="varchar(max)" />
-          <Property Name="first_login" Type="varchar(max)" />
-          <Property Name="last_login" Type="varchar(max)" />
-          <Property Name="profile_image" Type="varchar(max)" />
-        </EntityType>
-        <EntityType Name="need_product_details">
-          <Key>
-            <PropertyRef Name="product_id" />
-          </Key>
-          <Property Name="product_id" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="time_stamp" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
-          <Property Name="photo_one" Type="image" />
-          <Property Name="photo_two" Type="image" />
-          <Property Name="photo_three" Type="image" />
-          <Property Name="lat" Type="nvarchar(max)" />
-          <Property Name="long" Type="nvarchar(max)" />
-          <Property Name="title" Type="nvarchar(max)" />
-          <Property Name="decription" Type="nvarchar(max)" />
-          <Property Name="category" Type="nvarchar(max)" />
-          <Property Name="sub_category" Type="nvarchar(max)" />
-          <Property Name="super_sub_catrgory" Type="nvarchar(max)" />
-          <Property Name="mobile_number" Type="nvarchar(max)" />
-          <Property Name="isactive" Type="varchar(max)" />
-          <Property Name="report_count" Type="nvarchar(max)" />
-        </EntityType>
-        <EntityContainer Name="needDbModelStoreContainer">
-          <EntitySet Name="need_login_table" EntityType="Self.need_login_table" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="need_product_details" EntityType="Self.need_product_details" Schema="dbo" store:Type="Tables" />
-        </EntityContainer>
-      </Schema></edmx:StorageModels>
+    <Schema Namespace="needDbModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="needDbModelStoreContainer">
+    <EntitySet Name="need_login_table" EntityType="needDbModel.Store.need_login_table" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="need_product_details" EntityType="needDbModel.Store.need_product_details" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="need_login_table">
+    <Key>
+      <PropertyRef Name="mobile_number" />
+    </Key>
+    <Property Name="mobile_number" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="first_name" Type="varchar(max)" Nullable="true" />
+    <Property Name="last_name" Type="varchar(max)" Nullable="true" />
+    <Property Name="email" Type="varchar(max)" Nullable="true" />
+    <Property Name="password" Type="varchar(max)" Nullable="true" />
+    <Property Name="gender" Type="varchar(max)" Nullable="true" />
+    <Property Name="profile_image" Type="varchar(max)" Nullable="true" />
+    <Property Name="first_login" Type="varchar(max)" Nullable="true" />
+    <Property Name="last_login" Type="varchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="need_product_details">
+    <Key>
+      <PropertyRef Name="product_id" />
+    </Key>
+    <Property Name="product_id" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="time_stamp" Type="varchar(max)" StoreGeneratedPattern="Computed" Nullable="true" />
+    <Property Name="photo_one" Type="varchar(max)" Nullable="true" />
+    <Property Name="photo_two" Type="varchar(max)" Nullable="true" />
+    <Property Name="photo_three" Type="varchar(max)" Nullable="true" />
+    <Property Name="lat" Type="varchar(max)" Nullable="true" />
+    <Property Name="long" Type="varchar(max)" Nullable="true" />
+    <Property Name="title" Type="varchar(max)" Nullable="true" />
+    <Property Name="decription" Type="varchar(max)" Nullable="true" />
+    <Property Name="category" Type="varchar(max)" Nullable="true" />
+    <Property Name="sub_category" Type="varchar(max)" Nullable="true" />
+    <Property Name="super_sub_catrgory" Type="varchar(max)" Nullable="true" />
+    <Property Name="mobile_number" Type="varchar(max)" Nullable="true" />
+    <Property Name="isactive" Type="varchar(max)" Nullable="true" />
+    <Property Name="report_count" Type="varchar(max)" Nullable="true" />
+    <Property Name="emailId" Type="varchar(max)" Nullable="true" />
+  </EntityType>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="needDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -66,20 +67,21 @@
             <PropertyRef Name="product_id" />
           </Key>
           <Property Name="product_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="time_stamp" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
-          <Property Name="photo_one" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="photo_two" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="photo_three" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="lat" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="long" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="decription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="sub_category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="super_sub_catrgory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="mobile_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="time_stamp" Type="String" annotation:StoreGeneratedPattern="Computed" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="photo_one" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="photo_two" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="photo_three" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="lat" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="long" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="decription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="category" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="sub_category" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="super_sub_catrgory" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="mobile_number" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="isactive" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="report_count" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="report_count" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="emailId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="needDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="need_login_table" EntityType="Self.need_login_table" />
@@ -124,6 +126,7 @@
           <ScalarProperty Name="mobile_number" ColumnName="mobile_number" />
           <ScalarProperty Name="isactive" ColumnName="isactive" />
           <ScalarProperty Name="report_count" ColumnName="report_count" />
+          <ScalarProperty Name="emailId" ColumnName="emailId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

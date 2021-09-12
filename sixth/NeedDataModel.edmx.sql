@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/05/2021 11:52:02
+-- Date Created: 09/12/2021 13:36:31
 -- Generated from EDMX file: D:\asp_web_api\six\sixth\sixth\NeedDataModel.edmx
 -- --------------------------------------------------
 
@@ -50,20 +50,21 @@ GO
 -- Creating table 'need_product_details'
 CREATE TABLE [dbo].[need_product_details] (
     [product_id] varchar(50)  NOT NULL,
-    [time_stamp] binary(8)  NOT NULL,
-    [photo_one] varbinary(max)  NULL,
-    [photo_two] varbinary(max)  NULL,
-    [photo_three] varbinary(max)  NULL,
-    [lat] nvarchar(max)  NULL,
-    [long] nvarchar(max)  NULL,
-    [title] nvarchar(max)  NULL,
-    [decription] nvarchar(max)  NULL,
-    [category] nvarchar(max)  NULL,
-    [sub_category] nvarchar(max)  NULL,
-    [super_sub_catrgory] nvarchar(max)  NULL,
-    [mobile_number] nvarchar(max)  NULL,
+    [time_stamp] varchar(max)  NULL,
+    [photo_one] varchar(max)  NULL,
+    [photo_two] varchar(max)  NULL,
+    [photo_three] varchar(max)  NULL,
+    [lat] varchar(max)  NULL,
+    [long] varchar(max)  NULL,
+    [title] varchar(max)  NULL,
+    [decription] varchar(max)  NULL,
+    [category] varchar(max)  NULL,
+    [sub_category] varchar(max)  NULL,
+    [super_sub_catrgory] varchar(max)  NULL,
+    [mobile_number] varchar(max)  NULL,
     [isactive] varchar(max)  NULL,
-    [report_count] nvarchar(max)  NULL
+    [report_count] varchar(max)  NULL,
+    [emailId] varchar(max)  NULL
 );
 GO
 
